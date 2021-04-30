@@ -15,6 +15,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { componentFactoryName } from '@angular/compiler';
 
 /* Constante de routage de type Route */
 const appRoutes: Routes = [
@@ -28,15 +29,27 @@ const appRoutes: Routes = [
   },
   {
     path: 'books',
+    canActivate: [AuthGuardService],
     component: BookListComponent
   },
   {
     path: 'books/new',
-    component:BookFormComponent
+    canActivate: [AuthGuardService],
+    component: BookFormComponent
   },
   {
     path: 'books/view/id',
-    component:SingleBookComponent
+    canActivate: [AuthGuardService],
+    component: SingleBookComponent
+  },
+  {
+    path: '',
+    redirectTo: 'books',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'books'
   }
 ]
 
