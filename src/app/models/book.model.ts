@@ -1,6 +1,8 @@
 export class Book {
-    photo!: string; //! Point exclamation
-    constructor(public title:string, public author:string) {
+  photo: string;
+  synopsis: any;
 
-    }
+  constructor(public title: string, public author: string) {
+
+  }
 }

@@ -42,6 +42,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ],
             "outputPath": "dist/bookshelves",
             "index": "src/index.html",
             "main": "src/main.ts",

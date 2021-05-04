@@ -11,15 +11,17 @@ export class AppComponent {
   /* Création d'un constructor avec les informations dans le script de firebase */
   constructor() {
     var firebaseConfig = {
-      apiKey: "AIzaSyA1Xg50gtVR6-ZzKblk6be37DPXvrzfwdg",
-      authDomain: "bookshelves-2ff1e.firebaseapp.com",
-      projectId: "bookshelves-2ff1e",
-      storageBucket: "bookshelves-2ff1e.appspot.com",
-      messagingSenderId: "770749707719",
-      appId: "1:770749707719:web:5cfed6cf4cae0af352d5e2",
-      measurementId: "G-41YJ2C3138"
+      apiKey: "AIzaSyDMFG4vnk2H_n0GGsxaBsM-W6wbxMPHC6s",
+      authDomain: "bookshelves-ad300.firebaseapp.com",
+      databaseURL: 'https://bookshelves-ad300-default-rtdb.europe-west1.firebasedatabase.app/',
+      projectId: "bookshelves-ad300",
+      storageBucket: "bookshelves-ad300.appspot.com",
+      messagingSenderId: "838225922032",
+      appId: "1:838225922032:web:c4c4c74ca1cdbbb8d73f35",
+      measurementId: "G-6V409LF9J6"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-   }
+    firebase.analytics();
+  }
 }
