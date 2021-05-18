@@ -14,7 +14,9 @@ import { BooksService } from './services/books.service'
 import { AuthGuardService } from './services/auth-guard.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './footer/footer.component'
+import { DatePipe } from '@angular/common';
 
 
 /* Constante de routage de type Route */
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     BookListComponent,
     SingleBookComponent,
     BookFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,12 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthService, BooksService, AuthGuardService],
+  providers: [
+    AuthService,
+    BooksService,
+    AuthGuardService,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

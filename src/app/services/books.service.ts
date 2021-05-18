@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 import 'firebase/database';
 import { Subject } from 'rxjs';
-import { Book } from '../models/Book.model';
+import { Book } from '../models/book.model';
 import DataSnapshot = firebase.database.DataSnapshot;
 
 @Injectable()
@@ -17,7 +17,7 @@ export class BooksService {
   }
 
   /* Méthode émettant le bookSubject */
-  emitBooks() {
+    emitBooks() {
     this.booksSubject.next(this.books);
   }
 
